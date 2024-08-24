@@ -10,12 +10,24 @@ ul{
     width: 80%;
     margin-left: 10%;
 }
+.active{
+    border: 1px grey solid;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(114, 29, 14);
+    
+}
+.active:hover{
+    background: rgb(184, 180, 180);
+    color: black;
+    transition: .5s;
+}
 #first{
     text-align: center;
     height: 100vh;
     background-image: url('./images/header-background.jpg');
     background-repeat: no-repeat;
-    /* background-size: 100%; */
+    /* background-size: auto; */
     background-position: 100%;
     color: white;
 }
@@ -27,11 +39,11 @@ ul{
 #textHeading{
     font-size: 65px;
     font-weight: 700;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 .social{
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     width: 60%;
     margin-left: 20%;
 }
@@ -40,73 +52,157 @@ ul{
 }
 
 .downarrow{
-    margin-top: 70px;
+    margin-top: 50px;
 }
 .downarrow a{
     color: white;
 }
-/* Tablet styles (768px and above) */
 
-/* @media (max-width: 1024px) {
+.fa-bars{
+    height: 30px;
+    width: 30px;
+    color: yellow;
+}
+
+
+
+/* ABOUT SECTION */
+#about{
+    height: 100vh;
+    display: flex;
+    gap: 150px;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20vh ;
+    background-color: rgba(34, 33, 33, 0.959);
+    font-family: sans-serif;
+    color: grey;
+}
+.myPic{
+    width: 140px;
+    border-radius: 50%;
+    border: 2px grey solid;
+}
+.aboutHeading{
+    color: white;
+    margin-bottom: 20px;
+}
+.aboutContentText{
+    line-height: 25px;
+}
+.contactDetailsHeading{
+    margin-top: 30px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for tablet screens */
+
+    /* Navbar */
     ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-left: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 5%;
         padding: 15px 0;
     }
 
+    /* Heading and Text */
     .headingText {
-        width: 80%;
-        margin-left: 10%;
+        width: 70%;
+        margin-left: 15%;
         font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 70px;
     }
 
     #textHeading {
         font-size: 50px;
-        margin-top: 10vh;
+        margin-top: 8vh;
+    }
+
+    /* Social Icons */
+    .social {
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+
+    }
+
+    .social li a {
+        font-size: 20px;
+    }
+    .socialLinks{
+        margin-bottom: 50px;
+    }
+
+    /* About Section */
+    #about {
+        flex-direction: column;
+        padding-top: 10vh;
+        gap: 50px;
+        height: max-content;
+        padding-bottom: 10vh;
+    }
+    #imageSection{
+        align-self: center;
+    }
+    .aboutHeading {
+        font-size: 28px;
+    }
+
+    .aboutContentText {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .myPic {
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    .contactDetailsHeading {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:768px){
+    /* Adjustments for mobile screens */
+    
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 10px;
     }
 
     .social {
         width: 80%;
         margin-left: 10%;
-    }
-
-    .downarrow {
-        margin-top: 50px;
-    }
-} */
-
-/* Mobile styles (480px and below) */
-
-/* @media (max-width: 480px) {
-    ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-left: 0;
         padding: 10px 0;
     }
 
-    .headingText {
-        width: 90%;
-        margin-left: 5%;
-        font-size: 16px;
+    .social li {
+        display: inline-block;
+        margin: 0 10px;
     }
-
-    #textHeading {
-        font-size: 40px;
-        margin-top: 10vh;
-    }
-
-    .social {
-        width: 90%;
-        margin-left: 5%;
+    #about {
         flex-direction: column;
-        gap: 10px;
+        padding-top: 10vh;
+        gap: 50px;
+        height: max-content;
+        padding-bottom: 10vh;
     }
-
-    .downarrow {
-        margin-top: 30px;
+    #imageSection{
+        align-self: center;
     }
-} */
+    .myPic{
+        width: 100px;
+    }
+}
