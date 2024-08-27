@@ -10,12 +10,43 @@ ul{
     width: 80%;
     margin-left: 10%;
 }
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav a:hover{
+    color: rgb(95, 15, 15);
+}
+.side-bar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: flex-start;
+}
+.side-bar a{
+    color: black;
+    width: 100%;
+}
+.side-bar li{
+    width: 100%;
+}
+.close a{
+    color: white;
+}
 .active{
     border: 1px grey solid;
     padding: 10px;
     border-radius: 10px;
     background-color: rgb(114, 29, 14);
-    
 }
 .active:hover{
     background: rgb(184, 180, 180);
@@ -58,11 +89,11 @@ ul{
     color: white;
 }
 
-.fa-bars{
+/* .fa-bars{
     height: 30px;
     width: 30px;
     color: yellow;
-}
+} */
 
 
 
@@ -95,18 +126,178 @@ ul{
     margin-top: 30px;
 }
 
+
+/* TESTI8MONIALS PAGE */
+
+.topBlock{
+    height: max-content;
+    text-align: center;
+    padding: 3em;
+    background-color:#2c2c2cfd;
+    color: white;
+}
+
+
+.carousel{
+    position: relative;
+    background-image: url('./images/testimonials-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.carousel__item{
+    height: fit-content;
+    font-family: 'Quicksand, sans-serif';
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    display: none;
+    width: 50%;
+    margin-left: 25%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    animation: slide 2s ease-in-out 1s; /* 1s delay before starting the animation */
+}
+
+.carousel__item--selected{
+    display: block;
+}
+
+.carousel__nav{
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.carousel__button{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: rgba(255, 255,255, 0.2);
+    border-radius: 50%;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.carousel__button--selected{
+    background: rgba(255, 255,255, 0.5);
+
+}
+
+.textimonial-text{
+    font-size: 0.9em;
+}
+.credit{
+    font-size: 0.7em;
+    font-style: italic;
+    font-family: cursive;
+    text-align: center;
+}
+
+
+
+
+
+/* CONTACT */
+#contact{
+    height: fit-content;
+    width: 100%;
+    background-color: #2B2A2A;
+}
+
+.contactForm form{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    align-items: center;
+}
+form span{
+    color: rgb(255, 0, 0);
+}
+.contactForm section{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.contactForm label {
+    width: 100px; /* Adjust this width based on your design */
+    margin-right: 10px;
+    text-align: right; /* Align text to the right to be close to the input */
+}
+.contactForm input.textinput, 
+.contactForm textarea.textinput {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 200px;
+}
+
+.contactForm button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    margin-left: 20px; /* Align the button with the inputs */
+}
+
+.contactForm button:hover {
+    background-color: #0056b3;
+}
+.contactForm textarea.textinput{
+    height: 200px;
+}
+
+
+
+
+/* CONTACT PAGE */
+footer{
+    background-color: #0F0F0F;
+    height: fit-content;
+    color: rgba(116, 116, 116, 0.521);
+    padding: 30px;
+}
+footer .bi{
+    color: rgba(116, 116, 116, 0.521);
+}
+.bi:hover, footer span:hover{
+    color: white;
+    transition: 0.6s;
+}
+.footerText{
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    align-items: center;
+    gap: 2em;
+}
+
+
+
+
+/* MEDIA QURIES */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Adjustments for tablet screens */
 
     /* Navbar */
     ul {
-        flex-direction: row;
         justify-content: space-between;
         width: 90%;
         margin-left: 5%;
         padding: 15px 0;
     }
-
+    
     /* Heading and Text */
     .headingText {
         width: 70%;
@@ -136,6 +327,7 @@ ul{
     .socialLinks{
         margin-bottom: 50px;
     }
+    .down
 
     /* About Section */
     #about {
@@ -147,6 +339,8 @@ ul{
     }
     #imageSection{
         align-self: center;
+        position: relative;
+        top: -200px;
     }
     .aboutHeading {
         font-size: 28px;
@@ -166,22 +360,46 @@ ul{
         font-size: 20px;
         margin-top: 20px;
     }
+    .footerText{
+        display: flex;
+        width: 80%;
+        margin-left: 25%;
+        align-items: center;
+        gap: 2em;
+    }
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
     /* Adjustments for mobile screens */
+    nav .nav-List{
+        justify-content: right;
+    }
+    .respo{
+        display: none;
+    }
+    nav{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        padding: 20px;
+        width: 80%;
+        margin-left: 10%;
+    }
+    #textHeading{
+        font-size: 3em;
+        font-weight: 700;
+        margin-top: 5vh;
+        margin-bottom: 0.em;
+
+    }
+    .headingText{
+        width: 60%;
+        margin-left: 20%;
+        font-size: 1.2em;
+        /* display: none; */
+    }
     
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    .nav-item {
-        text-align: center;
-        padding: 10px;
-    }
-
+    
     .social {
         width: 80%;
         margin-left: 10%;
@@ -205,4 +423,270 @@ ul{
     .myPic{
         width: 100px;
     }
+    .topBlock{
+        height: max-content;
+        text-align: center;
+        padding: 2em;
+        background-color:#2c2c2cfd;
+        color: white;
+    }
+    
+    
+    .carousel{
+        position: relative;
+        background-image: url('./images/testimonials-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .carousel__item{
+        height: fit-content;
+        font-family: 'Quicksand, sans-serif';
+        font-weight: bold;
+        font-size: 1.5em;
+        color: white;
+        display: none;
+        width: 50%;
+        margin-left: 25%;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        animation: slide 2s ease-in-out 1s; /* 1s delay before starting the animation */
+    }
+    
+    .carousel__item--selected{
+        display: block;
+    }
+    
+    .carousel__nav{
+        width: 100%;
+        padding: 20px 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+    }
+    
+    .carousel__button{
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: rgba(255, 255,255, 0.2);
+        border-radius: 50%;
+        margin: 0px 5px;
+        cursor: pointer;
+    }
+    
+    .carousel__button--selected{
+        background: rgba(255, 255,255, 0.5);
+    
+    }
+    
+    .textimonial-text{
+        font-size: 0.9em;
+    }
+    .credit{
+        font-size: 0.7em;
+        font-style: italic;
+        font-family: cursive;
+        text-align: center;
+    }
+    #contact{
+        height: fit-content;
+        width: 100%;
+        background-color: #2B2A2A;
+    }
+    
+    .contactForm form{
+        display: flex;
+        color: white;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        align-items: center;
+    }
+    form span{
+        color: rgb(255, 0, 0);
+    }
+    .contactForm section{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .contactForm label {
+        width: 100px; /* Adjust this width based on your design */
+        margin-right: 10px;
+        text-align: right; /* Align text to the right to be close to the input */
+    }
+    .contactForm input.textinput, 
+    .contactForm textarea.textinput {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-left: 100px;
+    }
+    
+    footer{
+        background-color: #0F0F0F;
+        height: fit-content;
+        color: rgba(116, 116, 116, 0.521);
+        padding: 30px;
+    }
+    footer .bi{
+        color: rgba(116, 116, 116, 0.521);
+    }
+    .bi:hover, footer span:hover{
+        color: white;
+        transition: 0.6s;
+    }
+    .footerText{
+        display: flex;
+        width: 80%;
+        margin-left: 10%;
+        justify-content: center;
+        gap: 1em;
+    }
+
+}
+@media (max-width:480){
+    
+    .side-bar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 999;
+        background-color: rgba(225, 225, 225, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-self: flex-start;
+    }
+    .side-bar a{
+        color: black;
+        width: 100%;
+    }
+    .side-bar li{
+        width: 100%;
+    }
+    .close a{
+        color: white;
+    }
+    .active{
+        border: 1px grey solid;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(114, 29, 14);
+    }
+    .active:hover{
+        background: rgb(184, 180, 180);
+        color: black;
+        transition: .5s;
+    }
+    #first{
+        text-align: center;
+        height: 100vh;
+        background-image: url('./images/header-background.jpg');
+        background-repeat: no-repeat;
+        /* background-size: auto; */
+        background-position: 100%;
+        color: white;
+    }
+    .headingText{
+        width: 50%;
+        margin-left: 20%;
+        font-size: 0.2em;
+    }
+    #textHeading{
+        font-size: 65px;
+        font-weight: 700;
+        margin-top: 10vh;
+    }
+    .social{
+        margin-bottom: 30px;
+        margin-top: 30px;
+        width: 60%;
+        margin-left: 20%;
+    }
+    .social li a{
+        color: white;
+    }
+    
+    .downarrow{
+        margin-top: 50px;
+    }
+    .downarrow a{
+        color: white;
+    }
+    
+    
+
+
+
+
+    /* CONTACT */
+    
+/* CONTACT */
+    #contact{
+        height: fit-content;
+        width: 100%;
+        background-color: #2B2A2A;
+    }
+
+    .contactForm form{
+        display: flex;
+        color: white;
+        flex-direction: column;
+        gap: 1em;
+        padding: 15px;
+        align-items: center;
+    }
+    form span{
+        color: rgb(255, 0, 0);
+    }
+    .contactForm section{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .contactForm label {
+        width: 100px; /* Adjust this width based on your design */
+        /* margin-right: 10px */
+        text-align: right; /* Align text to the right to be close to the input */
+    }
+    .contactForm input.textinput, 
+    .contactForm textarea.textinput {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-left: 200px;
+    }
+
+    .contactForm button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 200px;
+        margin-left: 20px; /* Align the button with the inputs */
+    }
+
+    .contactForm button:hover {
+        background-color: #0056b3;
+    }
+    .contactForm textarea.textinput{
+        height: 200px;
+    }
+
+
+
+    
 }
