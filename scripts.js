@@ -1,8 +1,16 @@
-var arrow = document.getElementsByClassName('bi-arrow-down-circle')[0]
+var downarrow = document.getElementsByClassName('bi-arrow-down-circle')[0]
 var about = document.getElementById('about')
-arrow.addEventListener('click', function(event) {
+downarrow.addEventListener('click', function(event) {
     event.preventDefault();
     about.scrollIntoView({ behavior: 'smooth' });
+})
+
+
+var uparrow = document.getElementsByClassName('uparrow')[0]
+var first = document.getElementById('first')
+uparrow.addEventListener('click', function(event) {
+    event.preventDefault();
+    first.scrollIntoView({ behavior: 'smooth' });
 })
 
 // CAROUSEL 
@@ -40,8 +48,12 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 // bringing the sidebar
 
 const menu = document.querySelector('.menu-bars')
+console.log('menu')
 const sidebar = document.querySelector('.side-bar')
+console.log(sidebar)
 const navBar = document.querySelector('.nav-List')
+
+console.log(navBar)
 
 function showSidebar() {
     sidebar.style['display'] = 'flex'
